@@ -16,6 +16,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
   final _pinCtrl = TextEditingController();
   bool _isSaving = false;
   bool _isCheckingUpdate = false;
+  bool _obscureUrl = false;
+  bool _obscurePin = true;
 
   @override
   void initState() {
@@ -158,6 +160,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             const SizedBox(height: 16),
             TextField(
               controller: _urlCtrl,
+              obscureText: _obscureUrl,
               style: const TextStyle(color: Colors.white),
               decoration: InputDecoration(
                 labelText: 'Firebase Database URL',
@@ -167,6 +170,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 filled: true,
                 fillColor: const Color(0xFF1E293B),
                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                suffixIcon: IconButton(
+                  icon: Icon(
+                    _obscureUrl ? Icons.visibility_outlined : Icons.visibility_off_outlined,
+                    color: const Color(0xFF94A3B8),
+                  ),
+                  tooltip: _obscureUrl ? 'Hiện URL' : 'Ẩn URL',
+                  onPressed: () => setState(() => _obscureUrl = !_obscureUrl),
+                ),
               ),
             ),
             const SizedBox(height: 24),
@@ -178,7 +189,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             TextField(
               controller: _pinCtrl,
               keyboardType: TextInputType.number,
-              obscureText: true,
+              obscureText: _obscurePin,
               style: const TextStyle(color: Colors.white),
               decoration: InputDecoration(
                 labelText: 'Mã PIN Admin mở app',
@@ -186,6 +197,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 filled: true,
                 fillColor: const Color(0xFF1E293B),
                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                suffixIcon: IconButton(
+                  icon: Icon(
+                    _obscurePin ? Icons.visibility_outlined : Icons.visibility_off_outlined,
+                    color: const Color(0xFF94A3B8),
+                  ),
+                  tooltip: _obscurePin ? 'Hiện mã PIN' : 'Ẩn mã PIN',
+                  onPressed: () => setState(() => _obscurePin = !_obscurePin),
+                ),
               ),
             ),
             const SizedBox(height: 24),
