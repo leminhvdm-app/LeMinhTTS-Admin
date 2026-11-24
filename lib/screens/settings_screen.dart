@@ -73,9 +73,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 ),
                 icon: const Icon(Icons.download, size: 18),
                 label: const Text('Tải bản mới', style: TextStyle(fontWeight: FontWeight.bold)),
-                onPressed: () {
+                onPressed: () async {
                   Navigator.pop(ctx);
-                  _updateService.launchUpdateUrl(info.apkUrl);
+                  final ok = await _updateService.launchUpdateUrl(info.apkUrl);
+                  if (!ok && mounted) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text('Không thể mở liên kết tải: ${info.apkUrl}')),
+                    );
+                  }
                 },
               ),
             ],
