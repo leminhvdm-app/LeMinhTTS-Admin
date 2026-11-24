@@ -17,7 +17,7 @@ class LeMinhTTSAdminApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'LeMinhTTS Quản Lý',
+      title: 'Admin Le Minh TTS',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,

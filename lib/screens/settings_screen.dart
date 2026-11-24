@@ -209,7 +209,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('LeMinhTTS Quản Lý', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                        Text('Admin Le Minh TTS', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
                         Text('Phiên bản: V${AppUpdateService.currentVersion}', style: TextStyle(color: Color(0xFF94A3B8), fontSize: 12)),
                       ],
                     ),

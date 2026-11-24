@@ -22,7 +22,7 @@ class AppUpdateInfo {
 }
 
 class AppUpdateService {
-  static const String currentVersion = '1.0.0';
+  static const String currentVersion = '1.0.1';
   static const String githubRepo = 'leminhvdm-app/LeMinhTTS';
   final FirebaseService _firebaseService = FirebaseService();
 

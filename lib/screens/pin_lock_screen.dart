@@ -85,7 +85,7 @@ class _PinLockScreenState extends State<PinLockScreen> {
             ),
             const SizedBox(height: 24),
             const Text(
-              'LeMinhTTS Quản Lý',
+              'Admin Le Minh TTS',
               style: TextStyle(
                 fontSize: 22,
                 fontWeight: FontWeight.bold,

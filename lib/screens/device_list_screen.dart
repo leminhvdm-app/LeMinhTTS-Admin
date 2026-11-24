@@ -351,7 +351,7 @@ class _DeviceListScreenState extends State<DeviceListScreen> {
         backgroundColor: const Color(0xFF1E293B),
         elevation: 0,
         title: const Text(
-          'Quản Lý Máy LeMinhTTS',
+          'Admin Le Minh TTS',
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
         ),
         actions: [
